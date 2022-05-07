@@ -53,7 +53,7 @@ for line in file:
 			if re.search(":0|1:", line) or re.search(":1|0:", line):
 				if AF>=0.02 and AF<0.4 and alt_count>=2:
 					print(chr,pos-1,pos,ref,alt,sample,depth, AF, file=fo,sep="\t")
-			elif not re.search(":0|1:", line):
+			elif not (re.search(":0|1:", line) or re.search(":1|0:", line)):
 				if AF>=0.03 and AF<0.4 and alt_count>=2:
 					print(chr,pos-1,pos,ref,alt,sample,depth, AF, file=fo,sep="\t")
 
